@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, Linkedin } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 import { contactDetails, navigationItems } from "@/data/navigation";
 import styles from "./Footer.module.css";
 
@@ -9,7 +9,9 @@ export function Footer() {
       <div className={styles.inner}>
         <div className={styles.brandColumn}>
           <Link href="/" className={styles.brand} aria-label="AutoOps Forge home">
-            <span className={styles.logoMark}>AOF</span>
+            <span className={styles.logoMark} aria-hidden="true">
+              <span>AOF</span>
+            </span>
             <span>
               <strong>AutoOps Forge</strong>
               <small>Develop. Automate. Deploy.</small>
@@ -60,8 +62,8 @@ export function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <span>© 2025 AutoOps Forge. All rights reserved.</span>
-        <span>Privacy Policy · Terms of Service</span>
+        <span>(c) 2025 AutoOps Forge. All rights reserved.</span>
+        <span>Privacy Policy | Terms of Service</span>
       </div>
     </footer>
   );

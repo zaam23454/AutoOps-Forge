@@ -1,27 +1,57 @@
 .badge {
+  --badge-accent: var(--color-metal-silver);
+  --badge-accent-rgb: 161, 168, 179;
+
+  position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 0.32rem 0.6rem;
-  color: var(--color-metal-silver);
+  min-height: 30px;
+  padding: 0.36rem 0.68rem;
+  color: var(--badge-accent);
   font-family: var(--font-share-tech-mono), monospace;
   font-size: 0.75rem;
   line-height: 1;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  background:
+    linear-gradient(180deg, rgba(var(--badge-accent-rgb), 0.065), rgba(var(--badge-accent-rgb), 0.018)),
+    rgba(5, 11, 16, 0.62);
+  border: 1px solid rgba(var(--badge-accent-rgb), 0.38);
+  border-radius: 6px;
+  clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.badge::after {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 9px;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  opacity: 0.55;
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  border-color: rgba(var(--badge-accent-rgb), 0.66);
+  box-shadow: 0 0 16px rgba(var(--badge-accent-rgb), 0.16);
 }
 
 .cyan {
-  color: var(--color-electric-cyan);
-  border-color: var(--border-cyan);
+  --badge-accent: var(--color-electric-cyan);
+  --badge-accent-rgb: 0, 229, 255;
 }
 
 .orange {
-  color: var(--color-forge-orange);
-  border-color: var(--border-orange);
+  --badge-accent: var(--color-forge-orange);
+  --badge-accent-rgb: 255, 122, 26;
 }
 
 .neutral {
-  color: var(--color-metal-silver);
+  --badge-accent: var(--color-metal-silver);
+  --badge-accent-rgb: 161, 168, 179;
 }

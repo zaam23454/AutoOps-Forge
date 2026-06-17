@@ -1,4 +1,7 @@
 .button {
+  --button-accent: var(--color-electric-cyan);
+  --button-accent-rgb: 0, 229, 255;
+
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -6,33 +9,53 @@
   min-height: 44px;
   padding: 0.78rem 1.35rem;
   overflow: hidden;
+  isolation: isolate;
   color: var(--color-soft-white);
   font-family: var(--font-share-tech-mono), monospace;
   font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.045em;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid rgba(var(--button-accent-rgb), 0.46);
   border-radius: 6px;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
   transition:
-    transform var(--transition-smooth),
-    box-shadow var(--transition-smooth),
-    border-color var(--transition-smooth),
-    color var(--transition-smooth);
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.button::before,
+.button::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
 }
 
 .button::before {
-  position: absolute;
   inset: 0;
-  pointer-events: none;
-  content: "";
-  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%);
   transform: translateX(-120%);
   transition: transform 360ms ease;
 }
 
+.button::after {
+  inset: 6px;
+  background:
+    linear-gradient(var(--button-accent), var(--button-accent)) right bottom / 18px 1px no-repeat,
+    linear-gradient(var(--button-accent), var(--button-accent)) right bottom / 1px 18px no-repeat;
+  opacity: 0.5;
+}
+
 .button:hover {
   transform: translateY(-2px);
+  border-color: rgba(var(--button-accent-rgb), 0.74);
+  box-shadow:
+    0 0 0 1px rgba(var(--button-accent-rgb), 0.18),
+    0 0 24px rgba(var(--button-accent-rgb), 0.26);
 }
 
 .button:hover::before {
@@ -41,46 +64,59 @@
 
 .icon {
   display: inline-flex;
-  margin-left: 0.7rem;
+  margin-left: 0.72rem;
 }
 
 .primary {
+  --button-accent: var(--color-electric-cyan);
+  --button-accent-rgb: 0, 229, 255;
+
   color: #001116;
-  background: linear-gradient(135deg, var(--color-electric-cyan), var(--color-cyan-dark));
-  box-shadow: 0 0 22px rgba(0, 229, 255, 0.22);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 45%),
+    linear-gradient(135deg, var(--color-electric-cyan), var(--color-cyan-dark));
+  border-color: rgba(0, 229, 255, 0.72);
+  box-shadow: 0 0 26px rgba(0, 229, 255, 0.22);
 }
 
 .primary:hover {
-  box-shadow: 0 0 34px rgba(0, 229, 255, 0.38);
+  box-shadow:
+    0 0 0 1px rgba(0, 229, 255, 0.2),
+    0 0 34px rgba(0, 229, 255, 0.38);
 }
 
 .secondary {
-  color: var(--color-electric-cyan);
-  background: rgba(0, 229, 255, 0.035);
-  border-color: var(--border-cyan);
-}
+  --button-accent: var(--color-electric-cyan);
+  --button-accent-rgb: 0, 229, 255;
 
-.secondary:hover {
-  box-shadow: var(--cyan-glow);
+  color: var(--color-electric-cyan);
+  background:
+    linear-gradient(180deg, rgba(0, 229, 255, 0.07), rgba(0, 229, 255, 0.018)),
+    rgba(4, 10, 15, 0.58);
 }
 
 .accent {
-  color: var(--color-forge-orange);
-  background: rgba(255, 122, 26, 0.045);
-  border-color: var(--border-orange);
-}
+  --button-accent: var(--color-forge-orange);
+  --button-accent-rgb: 255, 122, 26;
 
-.accent:hover {
-  box-shadow: var(--orange-glow);
+  color: var(--color-forge-orange);
+  background:
+    linear-gradient(180deg, rgba(255, 122, 26, 0.075), rgba(255, 122, 26, 0.018)),
+    rgba(4, 10, 15, 0.62);
 }
 
 .ghost {
+  --button-accent: var(--color-metal-silver);
+  --button-accent-rgb: 161, 168, 179;
+
   color: var(--color-metal-silver);
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.018);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .ghost:hover {
+  --button-accent: var(--color-electric-cyan);
+  --button-accent-rgb: 0, 229, 255;
+
   color: var(--color-electric-cyan);
-  border-color: var(--border-cyan);
 }

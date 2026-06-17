@@ -1,71 +1,89 @@
 .card {
+  --card-accent: var(--color-electric-cyan);
+  --card-accent-rgb: 0, 229, 255;
+  --card-border: var(--glass-border);
+
   position: relative;
-  overflow: hidden;
   min-width: 0;
-  padding: clamp(1.1rem, 2.2vw, 1.55rem);
+  padding: clamp(1.15rem, 2.25vw, 1.6rem);
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--color-soft-white);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent 42%),
-    var(--color-panel-dark);
-  border: 1px solid var(--glass-border);
+    linear-gradient(180deg, rgba(245, 247, 250, 0.055), transparent 18%),
+    radial-gradient(circle at 16% 8%, rgba(var(--card-accent-rgb), 0.12), transparent 12rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.014) 42%, rgba(0, 0, 0, 0.16)),
+    rgba(7, 14, 20, 0.78);
+  border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
   box-shadow: var(--panel-shadow);
-  backdrop-filter: blur(18px);
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+  backdrop-filter: blur(24px) saturate(130%);
   transition:
-    border-color var(--transition-smooth),
-    box-shadow var(--transition-smooth),
-    transform var(--transition-smooth);
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
 }
 
 .card::before,
 .card::after {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  z-index: 1;
   pointer-events: none;
   content: "";
-  opacity: 0.75;
 }
 
 .card::before {
-  top: 0;
-  left: 0;
-  border-top: 1px solid var(--border-cyan);
-  border-left: 1px solid var(--border-cyan);
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, transparent 4%, var(--glass-top-highlight) 18%, transparent 48%),
+    linear-gradient(135deg, rgba(var(--card-accent-rgb), 0.62) 0 16px, transparent 16px),
+    linear-gradient(315deg, rgba(var(--card-accent-rgb), 0.4) 0 15px, transparent 15px);
+  opacity: 0.28;
 }
 
 .card::after {
-  right: 0;
-  bottom: 0;
-  border-right: 1px solid var(--border-cyan);
-  border-bottom: 1px solid var(--border-cyan);
+  inset: 10px;
+  background:
+    linear-gradient(var(--card-accent), var(--card-accent)) left top / 28px 1px no-repeat,
+    linear-gradient(var(--card-accent), var(--card-accent)) left top / 1px 28px no-repeat,
+    linear-gradient(var(--card-accent), var(--card-accent)) right bottom / 28px 1px no-repeat,
+    linear-gradient(var(--card-accent), var(--card-accent)) right bottom / 1px 28px no-repeat,
+    radial-gradient(circle at 94% 88%, rgba(var(--card-accent-rgb), 0.18), transparent 5rem);
+  opacity: 0.46;
+}
+
+.card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .hover:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  border-color: rgba(var(--card-accent-rgb), 0.66);
+  box-shadow:
+    var(--panel-shadow),
+    0 0 0 1px rgba(var(--card-accent-rgb), 0.24),
+    0 0 26px rgba(var(--card-accent-rgb), 0.24),
+    inset 0 0 28px rgba(var(--card-accent-rgb), 0.045);
 }
 
 .cyan {
-  border-color: var(--border-cyan);
-}
-
-.cyan:hover {
-  box-shadow: var(--panel-shadow), var(--cyan-glow);
+  --card-accent: var(--color-electric-cyan);
+  --card-accent-rgb: 0, 229, 255;
+  --card-border: rgba(0, 229, 255, 0.28);
 }
 
 .orange {
-  border-color: var(--border-orange);
+  --card-accent: var(--color-forge-orange);
+  --card-accent-rgb: 255, 122, 26;
+  --card-border: rgba(255, 122, 26, 0.38);
 }
 
-.orange::before,
-.orange::after {
-  border-color: var(--border-orange);
-}
-
-.orange:hover {
-  box-shadow: var(--panel-shadow), var(--orange-glow);
-}
-
-.neutral:hover {
-  border-color: rgba(0, 229, 255, 0.28);
-  box-shadow: var(--panel-shadow), 0 0 18px rgba(0, 229, 255, 0.14);
+.neutral {
+  --card-accent: var(--color-electric-cyan);
+  --card-accent-rgb: 0, 229, 255;
+  --card-border: rgba(164, 191, 205, 0.14);
 }

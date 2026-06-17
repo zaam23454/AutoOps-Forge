@@ -1,44 +1,73 @@
 .panel {
   position: relative;
-  padding: clamp(1.2rem, 3vw, 1.8rem);
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+  overflow: hidden;
+  isolation: isolate;
   background:
-    linear-gradient(120deg, rgba(0, 229, 255, 0.05), transparent 28%),
-    linear-gradient(300deg, rgba(255, 122, 26, 0.045), transparent 24%),
-    rgba(8, 15, 20, 0.78);
-  border: 1px solid var(--border-dim);
+    linear-gradient(180deg, rgba(245, 247, 250, 0.035), transparent 20%),
+    radial-gradient(circle at 10% 0%, rgba(0, 229, 255, 0.1), transparent 18rem),
+    radial-gradient(circle at 96% 100%, rgba(255, 122, 26, 0.075), transparent 16rem),
+    rgba(5, 11, 16, 0.82);
+  border: 1px solid rgba(164, 191, 205, 0.15);
   border-radius: var(--card-radius);
   box-shadow: var(--panel-shadow);
-  backdrop-filter: blur(20px);
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+  backdrop-filter: blur(24px) saturate(125%);
 }
 
 .panel::before,
 .panel::after {
   position: absolute;
-  width: 42px;
-  height: 42px;
   pointer-events: none;
   content: "";
 }
 
 .panel::before {
-  top: -1px;
-  left: -1px;
-  border-top: 1px solid var(--border-cyan);
-  border-left: 1px solid var(--border-cyan);
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, transparent 2%, rgba(0, 229, 255, 0.42) 8%, transparent 22%) top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent 76%, rgba(255, 122, 26, 0.42) 88%, transparent 98%) bottom / 100% 1px no-repeat,
+    linear-gradient(135deg, rgba(0, 229, 255, 0.52) 0 18px, transparent 18px),
+    linear-gradient(315deg, rgba(255, 122, 26, 0.42) 0 18px, transparent 18px);
+  opacity: 0.28;
 }
 
 .panel::after {
-  right: -1px;
-  bottom: -1px;
-  border-right: 1px solid var(--border-orange);
-  border-bottom: 1px solid var(--border-orange);
+  inset: 12px;
+  z-index: 1;
+  background:
+    linear-gradient(var(--color-electric-cyan), var(--color-electric-cyan)) left top / 36px 1px no-repeat,
+    linear-gradient(var(--color-electric-cyan), var(--color-electric-cyan)) left top / 1px 36px no-repeat,
+    linear-gradient(var(--color-electric-cyan), var(--color-electric-cyan)) right bottom / 32px 1px no-repeat,
+    linear-gradient(var(--color-electric-cyan), var(--color-electric-cyan)) right bottom / 1px 32px no-repeat,
+    linear-gradient(var(--color-forge-orange), var(--color-forge-orange)) right top / 18px 1px no-repeat,
+    linear-gradient(var(--color-forge-orange), var(--color-forge-orange)) right top / 1px 18px no-repeat;
+  opacity: 0.34;
+}
+
+.panel > * {
+  position: relative;
+  z-index: 2;
 }
 
 .title {
-  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.1rem;
   color: var(--color-electric-cyan);
   font-family: var(--font-share-tech-mono), monospace;
   font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.title::before {
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  content: "";
+  background: var(--color-electric-cyan);
+  box-shadow: var(--cyan-glow);
 }

@@ -33,7 +33,9 @@ export function Navbar() {
     <header className={styles.header}>
       <Container maxWidth={false} className={styles.container}>
         <Link href="/" className={styles.brand} aria-label="AutoOps Forge home">
-          <span className={styles.logoMark}>AOF</span>
+          <span className={styles.logoMark} aria-hidden="true">
+            <span>AOF</span>
+          </span>
           <span>
             <strong>AutoOps Forge</strong>
             <small>Develop. Automate. Deploy.</small>
