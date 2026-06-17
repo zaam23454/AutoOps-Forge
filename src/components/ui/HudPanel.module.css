@@ -1,0 +1,44 @@
+.panel {
+  position: relative;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  background:
+    linear-gradient(120deg, rgba(0, 229, 255, 0.05), transparent 28%),
+    linear-gradient(300deg, rgba(255, 122, 26, 0.045), transparent 24%),
+    rgba(8, 15, 20, 0.78);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--card-radius);
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: blur(20px);
+}
+
+.panel::before,
+.panel::after {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  pointer-events: none;
+  content: "";
+}
+
+.panel::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid var(--border-cyan);
+  border-left: 1px solid var(--border-cyan);
+}
+
+.panel::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 1px solid var(--border-orange);
+  border-bottom: 1px solid var(--border-orange);
+}
+
+.title {
+  margin-bottom: 1rem;
+  color: var(--color-electric-cyan);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}

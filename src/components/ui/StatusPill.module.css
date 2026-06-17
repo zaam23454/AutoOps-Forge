@@ -1,0 +1,50 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 28px;
+  padding: 0.34rem 0.62rem;
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.76rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+}
+
+.live {
+  color: var(--color-success-green);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.live .dot {
+  background: var(--color-success-green);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.55);
+}
+
+.production,
+.operational {
+  color: var(--color-electric-cyan);
+  border-color: var(--border-cyan);
+}
+
+.production .dot,
+.operational .dot {
+  background: var(--color-electric-cyan);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.55);
+}
+
+.processing {
+  color: var(--color-forge-orange);
+  border-color: var(--border-orange);
+}
+
+.processing .dot {
+  background: var(--color-forge-orange);
+  box-shadow: 0 0 12px rgba(255, 122, 26, 0.55);
+}

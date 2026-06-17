@@ -1,0 +1,45 @@
+.box {
+  position: relative;
+  display: inline-grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  color: var(--color-electric-cyan);
+  background: rgba(0, 229, 255, 0.045);
+  border: 1px solid var(--border-cyan);
+  border-radius: 8px;
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.box::before {
+  position: absolute;
+  inset: 8px;
+  content: "";
+  border: 1px solid currentColor;
+  opacity: 0.12;
+  transform: rotate(45deg);
+}
+
+.box:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--cyan-glow);
+}
+
+.orange {
+  color: var(--color-forge-orange);
+  background: rgba(255, 122, 26, 0.045);
+  border-color: var(--border-orange);
+}
+
+.orange:hover {
+  box-shadow: var(--orange-glow);
+}
+
+.green {
+  color: var(--color-success-green);
+  background: rgba(34, 197, 94, 0.045);
+  border-color: rgba(34, 197, 94, 0.35);
+}

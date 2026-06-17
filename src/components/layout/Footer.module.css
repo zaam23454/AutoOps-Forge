@@ -1,0 +1,154 @@
+.footer {
+  position: relative;
+  margin-top: var(--section-spacing);
+  background:
+    linear-gradient(180deg, rgba(0, 229, 255, 0.035), transparent),
+    rgba(5, 9, 13, 0.82);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.footer::before {
+  position: absolute;
+  top: -1px;
+  left: 6%;
+  width: 170px;
+  height: 1px;
+  content: "";
+  background: var(--color-electric-cyan);
+  box-shadow: var(--cyan-glow);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 0.7fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  width: min(100% - 32px, var(--max-page-width));
+  padding: clamp(2.5rem, 5vw, 4rem) 0 2rem;
+  margin-inline: auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logoMark {
+  display: grid;
+  width: 54px;
+  height: 40px;
+  place-items: center;
+  color: var(--color-electric-cyan);
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  background: rgba(0, 229, 255, 0.055);
+  border: 1px solid var(--border-cyan);
+  border-radius: 6px;
+}
+
+.brand strong {
+  display: block;
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand small {
+  display: block;
+  color: var(--color-electric-cyan);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brandColumn p {
+  max-width: 280px;
+  margin: 1.1rem 0 0;
+  color: var(--color-muted-text);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.footer h2 {
+  margin: 0 0 1rem;
+  color: var(--color-electric-cyan);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(80px, 1fr));
+  gap: 0.65rem 1rem;
+}
+
+.linkGrid a,
+.contactList a,
+.contactList span,
+.socialLink {
+  color: var(--color-metal-silver);
+  font-size: 0.9rem;
+  transition: color var(--transition-smooth);
+}
+
+.linkGrid a:hover,
+.contactList a:hover,
+.socialLink:hover {
+  color: var(--color-electric-cyan);
+}
+
+.contactList {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.contactList li,
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.contactList svg,
+.socialLink svg {
+  color: var(--color-electric-cyan);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: min(100% - 32px, var(--max-page-width));
+  padding: 1.15rem 0 1.8rem;
+  margin-inline: auto;
+  color: var(--color-muted-text);
+  font-size: 0.78rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .inner {
+    grid-template-columns: 1fr;
+    width: min(100% - 24px, var(--max-page-width));
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 0.55rem;
+    width: min(100% - 24px, var(--max-page-width));
+  }
+}

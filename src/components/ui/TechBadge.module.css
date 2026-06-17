@@ -1,0 +1,27 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0.32rem 0.6rem;
+  color: var(--color-metal-silver);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.75rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.cyan {
+  color: var(--color-electric-cyan);
+  border-color: var(--border-cyan);
+}
+
+.orange {
+  color: var(--color-forge-orange);
+  border-color: var(--border-orange);
+}
+
+.neutral {
+  color: var(--color-metal-silver);
+}

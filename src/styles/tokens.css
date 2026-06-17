@@ -1,0 +1,30 @@
+:root {
+  --color-deep-space: #080f14;
+  --color-dark-slate: #0f141b;
+  --color-panel-dark: rgba(15, 20, 27, 0.72);
+  --color-panel-glass: rgba(255, 255, 255, 0.04);
+  --color-electric-cyan: #00e5ff;
+  --color-cyan-dark: #0077ff;
+  --color-forge-orange: #ff7a1a;
+  --color-orange-deep: #ff5300;
+  --color-steel-gray: #1a212a;
+  --color-metal-silver: #a1a8b3;
+  --color-soft-white: #f5f7fa;
+  --color-muted-text: #94a3b8;
+  --color-success-green: #22c55e;
+  --color-warning-amber: #f59e0b;
+  --color-danger-red: #ef4444;
+
+  --border-dim: rgba(148, 163, 184, 0.16);
+  --border-cyan: rgba(0, 229, 255, 0.42);
+  --border-orange: rgba(255, 122, 26, 0.42);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --cyan-glow: 0 0 24px rgba(0, 229, 255, 0.28);
+  --orange-glow: 0 0 24px rgba(255, 122, 26, 0.24);
+  --panel-shadow: 0 24px 70px rgba(0, 0, 0, 0.48);
+  --section-spacing: clamp(4rem, 8vw, 7.5rem);
+  --max-page-width: 1200px;
+  --navbar-height: 76px;
+  --card-radius: 8px;
+  --transition-smooth: 180ms ease;
+}

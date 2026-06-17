@@ -1,0 +1,20 @@
+@keyframes cyanPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(0, 229, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 28px rgba(0, 229, 255, 0.22);
+  }
+}
+
+@keyframes scanLine {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}

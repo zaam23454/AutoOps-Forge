@@ -1,0 +1,40 @@
+.header {
+  max-width: 860px;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: var(--color-electric-cyan);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--color-soft-white);
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  font-size: clamp(2.25rem, 4.9vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: 1rem 0 0;
+  color: var(--color-muted-text);
+  font-size: clamp(1rem, 1.8vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.center .subtitle {
+  margin-inline: auto;
+}

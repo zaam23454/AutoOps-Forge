@@ -1,0 +1,28 @@
+.metric {
+  padding: 1rem;
+}
+
+.metric strong {
+  display: block;
+  color: var(--color-electric-cyan);
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1;
+}
+
+.metric span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--color-soft-white);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metric p {
+  margin: 0.45rem 0 0;
+  color: var(--color-muted-text);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
