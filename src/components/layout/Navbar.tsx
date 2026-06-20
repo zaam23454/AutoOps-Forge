@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Box, Container, Drawer, Stack } from "@mui/material";
 import { Menu, X } from "lucide-react";
@@ -33,13 +34,14 @@ export function Navbar() {
     <header className={styles.header}>
       <Container maxWidth={false} className={styles.container}>
         <Link href="/" className={styles.brand} aria-label="AutoOps Forge home">
-          <span className={styles.logoMark} aria-hidden="true">
-            <span>AOF</span>
-          </span>
-          <span>
-            <strong>AutoOps Forge</strong>
-            <small>Develop. Automate. Deploy.</small>
-          </span>
+          <Image
+            src="/brand/autoops-forge-wide-wordmark.png"
+            alt="AutoOps Forge"
+            width={210}
+            height={64}
+            priority
+            className={styles.brandLogo}
+          />
         </Link>
 
         <Box component="nav" className={styles.desktopNav} aria-label="Primary navigation">

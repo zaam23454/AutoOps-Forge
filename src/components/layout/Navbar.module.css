@@ -25,82 +25,17 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.9rem;
+  width: 210px;
+  height: 54px;
   min-width: 0;
 }
 
-.logoMark {
-  position: relative;
-  display: grid;
-  width: 54px;
-  height: 38px;
-  place-items: center;
-  background:
-    linear-gradient(145deg, rgba(245, 247, 250, 0.22), rgba(161, 168, 179, 0.04) 36%, rgba(0, 229, 255, 0.09)),
-    rgba(5, 11, 16, 0.72);
-  border: 1px solid var(--border-cyan);
-  border-radius: 7px;
-  clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 0 20px rgba(0, 229, 255, 0.16);
-}
-
-.logoMark::before,
-.logoMark::after {
-  position: absolute;
-  pointer-events: none;
-  content: "";
-}
-
-.logoMark::before {
-  inset: 5px;
-  border: 1px solid rgba(0, 229, 255, 0.18);
-  clip-path: polygon(0 0, 82% 0, 100% 50%, 82% 100%, 0 100%, 16% 50%);
-}
-
-.logoMark::after {
-  right: 6px;
-  bottom: 6px;
-  width: 10px;
-  height: 3px;
-  background: var(--color-forge-orange);
-  box-shadow: 0 0 10px rgba(255, 122, 26, 0.5);
-  transform: skewX(-22deg);
-}
-
-.logoMark span {
-  color: var(--color-soft-white);
-  font-family: var(--font-orbitron), system-ui, sans-serif;
-  font-size: 0.84rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  text-shadow:
-    0 0 10px rgba(0, 229, 255, 0.55),
-    1px 1px 0 rgba(0, 229, 255, 0.36);
-}
-
-.brand strong {
-  display: block;
-  color: var(--color-soft-white);
-  font-family: var(--font-orbitron), system-ui, sans-serif;
-  font-size: 0.92rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.brand small {
-  display: block;
-  margin-top: 0.18rem;
-  color: var(--color-electric-cyan);
-  font-family: var(--font-share-tech-mono), monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.brand small::after {
-  color: var(--color-forge-orange);
+.brandLogo {
+  width: 210px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 0 14px rgba(0, 229, 255, 0.22));
 }
 
 .desktopNav {
@@ -211,15 +146,8 @@
     width: min(100% - 24px, var(--max-page-width)) !important;
   }
 
-  .brand strong {
-    font-size: 0.78rem;
-  }
-
-  .brand small {
-    font-size: 0.54rem;
-  }
-
-  .logoMark {
-    width: 46px;
+  .brand,
+  .brandLogo {
+    width: 172px;
   }
 }

@@ -38,55 +38,17 @@
 .logoMark {
   position: relative;
   display: grid;
-  width: 54px;
-  height: 40px;
+  width: 66px;
+  height: 50px;
   place-items: center;
-  background:
-    linear-gradient(145deg, rgba(245, 247, 250, 0.22), rgba(161, 168, 179, 0.04) 36%, rgba(0, 229, 255, 0.09)),
-    rgba(5, 11, 16, 0.72);
-  border: 1px solid var(--border-cyan);
-  border-radius: 6px;
-  clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 0 20px rgba(0, 229, 255, 0.16);
+  filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.24));
 }
 
-.logoMark::before,
-.logoMark::after {
-  position: absolute;
-  pointer-events: none;
-  content: "";
+.logoMark img {
+  object-fit: contain;
 }
 
-.logoMark::before {
-  inset: 5px;
-  border: 1px solid rgba(0, 229, 255, 0.18);
-  clip-path: polygon(0 0, 82% 0, 100% 50%, 82% 100%, 0 100%, 16% 50%);
-}
-
-.logoMark::after {
-  right: 6px;
-  bottom: 6px;
-  width: 10px;
-  height: 3px;
-  background: var(--color-forge-orange);
-  box-shadow: 0 0 10px rgba(255, 122, 26, 0.5);
-  transform: skewX(-22deg);
-}
-
-.logoMark span {
-  color: var(--color-soft-white);
-  font-family: var(--font-orbitron), system-ui, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  text-shadow:
-    0 0 10px rgba(0, 229, 255, 0.55),
-    1px 1px 0 rgba(0, 229, 255, 0.36);
-}
-
-.brand strong {
+.brandText strong {
   display: block;
   font-family: var(--font-orbitron), system-ui, sans-serif;
   font-size: 0.95rem;
@@ -94,7 +56,7 @@
   text-transform: uppercase;
 }
 
-.brand small {
+.brandText small {
   display: block;
   color: var(--color-electric-cyan);
   font-family: var(--font-share-tech-mono), monospace;

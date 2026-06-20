@@ -24,7 +24,7 @@
   --orange-glow: 0 0 18px rgba(255, 122, 26, 0.26), 0 0 42px rgba(255, 83, 0, 0.12);
   --panel-shadow: 0 26px 80px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.035);
   --section-spacing: clamp(4rem, 8vw, 7.5rem);
-  --max-page-width: 1200px;
+  --max-page-width: 1360px;
   --navbar-height: 76px;
   --card-radius: 8px;
   --transition-smooth: 180ms ease;

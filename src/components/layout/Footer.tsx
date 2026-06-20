@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin, Mail, Phone } from "lucide-react";
 import { contactDetails, navigationItems } from "@/data/navigation";
 import styles from "./Footer.module.css";
@@ -10,9 +11,9 @@ export function Footer() {
         <div className={styles.brandColumn}>
           <Link href="/" className={styles.brand} aria-label="AutoOps Forge home">
             <span className={styles.logoMark} aria-hidden="true">
-              <span>AOF</span>
+              <Image src="/brand/autoops-forge-mark.png" alt="" fill sizes="62px" />
             </span>
-            <span>
+            <span className={styles.brandText}>
               <strong>AutoOps Forge</strong>
               <small>Develop. Automate. Deploy.</small>
             </span>
