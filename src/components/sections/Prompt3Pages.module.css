@@ -1,0 +1,429 @@
+.page {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 8%, rgba(0, 229, 255, 0.08), transparent 28rem),
+    radial-gradient(circle at 18% 36%, rgba(255, 122, 26, 0.05), transparent 22rem);
+}
+
+.container {
+  width: min(100% - 32px, var(--max-page-width)) !important;
+  max-width: var(--max-page-width) !important;
+  padding: 0 !important;
+  margin-inline: auto;
+}
+
+.hero {
+  position: relative;
+  min-height: 520px;
+  padding: clamp(6rem, 8vw, 8rem) 0 3rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background-image: url("/brand/main-hero-image.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: min(76vw, 1120px) auto;
+  opacity: 0.72;
+  filter: saturate(1.08) contrast(1.08) brightness(0.82);
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(5, 9, 13, 1) 0%, rgba(5, 9, 13, 0.94) 31%, rgba(5, 9, 13, 0.46) 64%, rgba(5, 9, 13, 0.88) 100%),
+    linear-gradient(180deg, rgba(5, 9, 13, 0.94) 0%, transparent 32%, rgba(5, 9, 13, 0.98) 100%),
+    radial-gradient(ellipse at 68% 72%, rgba(0, 229, 255, 0.18), transparent 23rem),
+    linear-gradient(rgba(0, 229, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.024) 1px, transparent 1px);
+  background-size: auto, auto, auto, 78px 78px, 78px 78px;
+}
+
+.heroInner {
+  max-width: 620px;
+}
+
+.eyebrow,
+.panelTitle,
+.meta,
+.tab,
+.smallLabel {
+  color: var(--color-electric-cyan);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0.7rem 0 1rem;
+  color: var(--color-soft-white);
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  font-size: clamp(3rem, 5vw, 5.6rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+
+.cyan {
+  color: var(--color-electric-cyan);
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.44);
+}
+
+.hero p,
+.copy,
+.cardText,
+.muted {
+  color: var(--color-metal-silver);
+  line-height: 1.7;
+}
+
+.heroActions,
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.section {
+  padding: clamp(2rem, 4vw, 3.6rem) 0;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.sectionHead h2,
+.detailTitle {
+  margin: 0;
+  color: var(--color-soft-white);
+  font-family: var(--font-rajdhani), system-ui, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.serviceCard,
+.workCard {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.serviceCard h3,
+.workCard h3,
+.capability h3,
+.whyCard h3,
+.featureText h3,
+.workflowCard h3 {
+  margin: 0;
+  color: var(--color-soft-white);
+  font-family: var(--font-rajdhani), system-ui, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.12;
+}
+
+.bulletList,
+.checkList {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.bulletList li,
+.checkList li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--color-metal-silver);
+  font-size: 0.92rem;
+}
+
+.bulletList li::before,
+.checkList li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--color-electric-cyan);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  color: var(--color-electric-cyan);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.84rem;
+  text-decoration: none;
+}
+
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.capability {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.capability p,
+.whyCard p,
+.workflowCard p,
+.featureText p,
+.workCard p {
+  margin: 0;
+  color: var(--color-muted-text);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.whyCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.ctaPanel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  border-color: rgba(255, 122, 26, 0.42);
+}
+
+.ctaLogo {
+  width: 92px;
+  height: auto;
+}
+
+.statsRow {
+  display: grid;
+  max-width: 620px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.55rem;
+}
+
+.tab {
+  border: 0;
+  padding: 0.78rem 1rem;
+  color: var(--color-metal-silver);
+  background: transparent;
+}
+
+.activeTab {
+  color: var(--color-electric-cyan);
+  border-bottom: 2px solid var(--color-electric-cyan);
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.projectIntro h2 {
+  margin: 0.4rem 0 0.35rem;
+  color: var(--color-soft-white);
+  font-family: var(--font-rajdhani), system-ui, sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.tagRow,
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.browser {
+  overflow: hidden;
+  border: 1px solid rgba(0, 229, 255, 0.24);
+  border-radius: 8px;
+  background: rgba(6, 11, 16, 0.9);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+}
+
+.browserTop {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.browserTop span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-forge-orange);
+  box-shadow: 15px 0 0 #f5c542, 30px 0 0 #22c55e;
+}
+
+.projectScreen {
+  min-height: 260px;
+  padding: 2rem;
+  background:
+    linear-gradient(90deg, rgba(5, 9, 13, 0.18), rgba(5, 9, 13, 0.86)),
+    radial-gradient(circle at 30% 45%, rgba(0, 229, 255, 0.3), transparent 14rem),
+    linear-gradient(135deg, rgba(0, 229, 255, 0.13), rgba(255, 122, 26, 0.08));
+}
+
+.screenCard {
+  max-width: 420px;
+  padding: 1.2rem;
+  border: 1px solid rgba(0, 229, 255, 0.32);
+  background: rgba(5, 9, 13, 0.66);
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.moreGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+}
+
+.quote {
+  margin: 0;
+  color: var(--color-metal-silver);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.client {
+  display: grid;
+  align-content: center;
+  gap: 0.4rem;
+}
+
+.detailGrid,
+.detailColumns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.detailColumns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+  .servicesGrid,
+  .capabilityGrid,
+  .whyGrid,
+  .moreGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured,
+  .testimonialGrid,
+  .ctaPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowGrid,
+  .detailColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 24px, var(--max-page-width)) !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 6.5rem;
+  }
+
+  .hero::before {
+    background-position: 60% center;
+    background-size: auto 100%;
+    opacity: 0.42;
+  }
+
+  .heroActions,
+  .ctaActions,
+  .sectionHead {
+    display: grid;
+  }
+
+  .servicesGrid,
+  .capabilityGrid,
+  .whyGrid,
+  .statsRow,
+  .workflowGrid,
+  .moreGrid,
+  .detailGrid,
+  .detailColumns {
+    grid-template-columns: 1fr;
+  }
+}
