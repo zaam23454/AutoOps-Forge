@@ -94,20 +94,6 @@ function PortfolioHero() {
             </div>
           </div>
 
-          <div className={styles.portraitWrap} aria-label="Portrait of Maaz Khalid">
-            <div className={styles.portraitGlow} />
-            <div className={styles.portraitFrame}>
-              <Image
-                src="/portfolio/maaz-portrait-cutout.png"
-                alt="Maaz Khalid"
-                fill
-                priority
-                sizes="(max-width: 760px) 85vw, 38vw"
-                className={styles.portrait}
-              />
-            </div>
-          </div>
-
           <div className={styles.sidePanel}>
             <GlassCard accent="cyan" className={styles.availability}>
               <span className={styles.smallLabel}>Open to</span>
