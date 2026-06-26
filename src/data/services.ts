@@ -22,232 +22,302 @@ export const serviceDetails: ServiceDetail[] = [
     slug: "devops-deployment",
     title: "DevOps & Deployment",
     description:
-      "CI/CD pipelines, infrastructure support, cloud deployment, environments, rollback planning, and reliable release operations.",
-    overviewDescription:
-      "CI/CD pipelines, infrastructure support, cloud deployment, environments, rollback planning, and reliable release operations.",
+  "CI/CD pipelines, cloud deployments, infrastructure automation, containerized environments, monitoring, and reliable release support.",
+overviewDescription:
+  "CI/CD pipelines, cloud deployments, infrastructure automation, containerized environments, monitoring, and reliable release support",
     href: "/services/devops-deployment",
     icon: "cloud",
     bullets: [
-      "CI/CD Pipeline Design",
-      "Infrastructure as Code",
-      "Cloud Deployment",
-      "Environments & Releases",
-      "Rollback & Recovery",
-      "Monitoring & Troubleshooting"
-    ],
+        "CI/CD Pipeline Design",
+        "Infrastructure as Code",
+        "Cloud & Server Deployment",
+        "Containerization",
+        "Release Troubleshooting",
+        "Rollback & Recovery"
+      ],
     heroText:
-      "Reliable releases, cloud environments, CI/CD pipelines, and deployment support for teams that need systems to ship safely.",
+         "Modern teams need more than deployment buttons. I help fix broken pipelines, automate release workflows, stabilize environments, and build reliable delivery systems across cloud, servers, containers, and CI/CD platforms.",
     problems: [
-      "Failed deployments",
-      "Manual release steps",
-      "Unstable environments",
-      "Missing rollback process",
-      "Poor monitoring visibility",
-      "Slow delivery cycles"
-    ],
+          "Failed or unreliable deployments",
+          "Broken CI/CD pipelines",
+          "Manual release steps and human errors",
+          "Environment mismatch between local, staging, and production",
+          "Missing rollback and recovery process",
+          "Poor monitoring, logs, and deployment visibility",
+          "Post-deployment cache, routing, or content refresh issues",
+          "Cloud/server configuration drift"
+        ],
     provides: [
-      "CI/CD pipeline setup",
-      "Cloud deployment support",
-      "Vercel / Azure / AWS deployment",
-      "Docker and environment setup",
-      "Release troubleshooting",
-      "Monitoring and log review",
-      "Rollback/recovery planning"
-    ],
+        "CI/CD setup with GitHub Actions, Jenkins, Azure DevOps, and CircleCI",
+        "Cloud deployment support across AWS, Azure, GCP, JAMstack Platforms, Static/Edge Hosting",
+        "Infrastructure automation with Terraform and ARM templates",
+        "Configuration management with Ansible",
+        "Containerization with Docker and Docker Compose",
+        "Nginx Plus, IIS, and reverse proxy configuration",
+        "Release troubleshooting, rollback planning, and production support",
+        "API, webhook, Postman, and automation workflow support"
+      ],
     tools: [
-      "Azure",
-      "AWS",
-      "Vercel",
-      "Docker",
-      "Jenkins",
-      "Ansible",
-      "GitHub",
-      "Azure DevOps",
-      "Linux",
-      "Windows Server",
-      "IIS",
-      "Nginx"
-    ],
+       "Terraform",
+       "Ansible",
+       "Ansible Tower",
+       "Azure",
+       "AWS",
+       "GCP",
+       "S3",
+       "Vercel",
+       "Docker",
+       "Docker Compose",
+       "Jenkins",
+       "GitHub Actions",
+       "Azure DevOps",
+       "Bitbucket",
+       "CircleCI",
+       "Nginx",
+       "Nginx Plus",
+       "IIS",
+       "Datadog",
+       "Grafana",
+       "Postman",
+       "REST APIs",
+       "PowerShell",
+       "Bash",
+       "Google Apps Script",
+       "PostgreSQL",
+       "SQL Server"
+          ],
     useCases: [
-      "Deploy a new Next.js website",
-      "Fix failing pipeline",
-      "Stabilize production release",
-      "Move app from local/manual deployment to Vercel/cloud",
-      "Improve server reliability"
-    ],
-    ctaHeading: "Need reliable deployment support?"
+       "Fix a failing GitHub Actions, Jenkins, or Azure DevOps pipeline",
+       "Move manual deployments into automated CI/CD workflows",
+       "Deploy a Next.js or business app to Vercel, cloud, or server infrastructure",
+       "Automate infrastructure provisioning with Terraform",
+       "Run repeatable server configuration through Ansible playbooks",
+       "Containerize applications with Docker and Docker Compose",
+       "Troubleshoot failed production releases and rollback safely",
+       "Build API, webhook, and Postman-based automation workflows"
+       ],
+    ctaHeading: "Need reliable DevOps and deployment support?"
   },
   {
-    slug: "custom-software-development",
-    title: "Custom Software Development",
-    description:
-      "Scalable, secure, and performant web applications tailored to your business needs.",
-    overviewDescription:
-      "Scalable, secure, and performant web applications tailored to your business needs.",
-    href: "/services/custom-software-development",
-    icon: "code",
-    bullets: [
-      "Web Applications",
-      "APIs & Integrations",
-      "Dashboards & Portals",
-      "Business Systems",
-      "Management Systems",
-      "Database Design"
-    ],
-    heroText:
-      "Business websites, dashboards, portals, APIs, and management systems built around your real workflow.",
-    problems: [
-      "Business has no proper system",
-      "Manual spreadsheet-heavy operations",
-      "Website does not convert leads",
-      "Existing app needs new features",
-      "No dashboard for operations",
-      "Poor user experience"
-    ],
-    provides: [
-      "Business websites",
-      "Web applications",
-      "Dashboards and portals",
-      "API development and integration",
-      "Management systems",
-      "Booking/lead capture flows",
-      "Database-backed applications"
-    ],
-    tools: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "REST APIs",
-      "Google Sheets",
-      "Google Apps Script",
-      "Vercel",
-      "PostgreSQL",
-      "MySQL"
-    ],
-    useCases: [
-      "Business service website",
-      "Inventory management system",
-      "Internal dashboard",
-      "Customer portal",
-      "Lead capture system",
-      "Feature extension for an existing product"
-    ],
-    ctaHeading: "Have a software idea or business system to build?"
-  },
+  slug: "custom-software-development",
+  title: "Custom Software Development",
+  description:
+    "Custom web apps, .NET systems, REST APIs, dashboards, portals, database-backed tools, and workflow automation built around real business needs.",
+  overviewDescription:
+    "Custom web apps, .NET systems, REST APIs, dashboards, portals, database-backed tools, and workflow automation built around real business needs.",
+  href: "/services/custom-software-development",
+  icon: "code",
+  bullets: [
+    "Web Applications",
+    ".NET & Legacy Systems",
+    "REST APIs & Integrations",
+    "Dashboards & Portals",
+    "Database-Backed Tools",
+    "Feature Development"
+  ],
+  heroText:
+    "I build practical software that solves real business problems: custom websites, internal tools, .NET applications, REST APIs, dashboards, portals, automation systems, and database-backed workflows.",
+  problems: [
+    "Business relies on spreadsheets or manual processes",
+    "Existing application needs new features or modernization",
+    "Legacy .NET Framework app needs maintenance or migration",
+    "No dashboard or portal for operations, users, or reporting",
+    "Teams repeat manual work that can be automated",
+    "Systems do not connect through APIs or integrations",
+    "Website does not capture leads or support business workflow",
+    "Database and application workflows are hard to manage"
+  ],
+  provides: [
+    "Custom business websites and one-page service sites",
+    ".NET Framework, .NET MVC, .NET 8, and .NET 10 application support",
+    "Legacy application maintenance, modernization, and migration",
+    "REST API development for automation and internal workflows",
+    "Custom dashboards, admin panels, and customer portals",
+    "Database-backed applications using SQL Server, PostgreSQL, and MySQL",
+    "Feature development for existing applications",
+    "Google Apps Script, PowerShell, Windows Forms, and workflow automation"
+  ],
+  tools: [
+    ".NET Framework",
+    ".NET MVC",
+    ".NET 8",
+    ".NET 10",
+    "C#",
+    "REST APIs",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "HTML",
+    "CSS",
+    "Node.js",
+    "PowerShell",
+    "Windows Forms",
+    "Google Apps Script",
+    "Azure",
+    "Active Directory",
+    "SQL Server",
+    "PostgreSQL",
+    "MySQL",
+    "Vercel",
+    "Git",
+    "Postman"
+  ],
+  useCases: [
+    "Build a custom business website or service landing page",
+    "Create REST APIs to reduce manual team workflows",
+    "Add new features to an existing application",
+    "Modernize or migrate a legacy .NET Framework application",
+    "Build internal dashboards, admin panels, or customer portals",
+    "Create inventory, e-commerce, booking, or lead capture systems",
+    "Automate user management workflows with Azure Active Directory",
+    "Connect business workflows with databases, APIs, and automation scripts"
+  ],
+  ctaHeading: "Need custom software built around your workflow?"
+},
   {
-    slug: "automation-scripting",
-    title: "Automation & Scripting",
-    description:
-      "Automate workflows, data processing, repetitive tasks, and business operations.",
-    overviewDescription:
-      "Automate workflows, data processing, repetitive tasks, and business operations.",
-    href: "/services/automation-scripting",
-    icon: "automation",
-    bullets: [
-      "PowerShell Automation",
-      "Bash & Shell Scripting",
-      "Python Automation",
-      "Task & Job Scheduling",
-      "One-Click EXE Tools",
-      "REST API Automation"
-    ],
-    heroText:
-      "Turn repetitive manual work into scripts, tools, workflows, and one-click utilities your team can rely on.",
-    problems: [
-      "Repetitive manual tasks",
-      "Human error in daily operations",
-      "Slow reporting or data processing",
-      "Manual deployment or support steps",
-      "No simple internal tools",
-      "Teams wasting time on copy-paste work"
-    ],
-    provides: [
-      "PowerShell automation",
-      "Bash scripting",
-      "Python scripting",
-      "One-click EXE tools",
-      "API automation",
-      "Data processing workflows",
-      "Task scheduling",
-      "System administration automation"
-    ],
-    tools: [
-      "PowerShell",
-      "Bash",
-      "Python",
-      "REST APIs",
-      "YAML",
-      "Google Apps Script",
-      "Windows",
-      "Linux",
-      "GitHub",
-      "Jenkins"
-    ],
-    useCases: [
-      "Automate daily support checks",
-      "Create one-click internal utility",
-      "Process data from files/APIs",
-      "Automate server/admin tasks",
-      "Build team productivity scripts"
-    ],
-    ctaHeading: "Want to remove repetitive manual work?"
-  },
+  slug: "automation-scripting",
+  title: "Automation & Scripting",
+  description:
+    "PowerShell, Bash, scheduled jobs, APIs, one-click tools, browser automation, and workflow scripts that reduce manual work.",
+  overviewDescription:
+    "PowerShell, Bash, scheduled jobs, APIs, one-click tools, browser automation, and workflow scripts that reduce manual work.",
+  href: "/services/automation-scripting",
+  icon: "automation",
+  bullets: [
+    "PowerShell Automation",
+    "Bash & Cron Jobs",
+    "Task Scheduler Workflows",
+    "REST API Automation",
+    "One-Click EXE Tools",
+    "Browser & Macro Automation"
+  ],
+  heroText:
+    "I build practical automation for real business operations: PowerShell scripts, Bash jobs, scheduled tasks, Azure Functions, REST APIs, one-click internal tools, browser automation, and workflow scripts that save time and reduce human error.",
+  problems: [
+    "Repetitive manual tasks slowing the team down",
+    "Support work requires logging into servers manually",
+    "Daily, weekly, or monthly tasks are not scheduled",
+    "Manual password rotation, checks, or admin operations",
+    "Teams depend on copy-paste workflows and repeated clicks",
+    "No internal tool or API to trigger common operations",
+    "Dashboards, reports, or monitoring tasks need manual updates",
+    "Browser or legacy workflows have no direct API available"
+  ],
+  provides: [
+    "PowerShell automation for Windows systems and admin workflows",
+    "Bash scripting, cron jobs, and Linux task automation",
+    "Windows Task Scheduler workflows and one-click EXE utilities",
+    "Azure Functions for scheduled cloud automation tasks",
+    "REST API and middleware automation for internal team operations",
+    "Ansible jobs and playbooks for repeatable workflow execution",
+    "Playwright browser automation for workflows without APIs",
+    "Macro-style automation for approved keystroke, mouse, and desktop workflows"
+  ],
+  tools: [
+    "PowerShell",
+    "Bash",
+    "Cron Jobs",
+    "Task Scheduler",
+    "Azure Functions",
+    "REST APIs",
+    "Postman",
+    "Ansible",
+    "Ansible Tower",
+    "Playwright",
+    "Windows Forms",
+    "One-Click EXEs",
+    "Macros",
+    "Datadog",
+    "Google Apps Script",
+    "Python",
+    "YAML",
+    "GitHub",
+    "Linux",
+    "Windows Server"
+  ],
+  useCases: [
+    "Automate monthly password rotation through Azure Functions",
+    "Create one-click EXE tools for internal support teams",
+    "Expose server/admin tasks through secure REST APIs",
+    "Automate Linux jobs with Bash scripts and cron schedules",
+    "Run Windows operational workflows through Task Scheduler",
+    "Update or maintain Datadog dashboards through automation",
+    "Automate browser-based workflows with Playwright",
+    "Capture approved macro-style desktop workflows into repeatable tools"
+  ],
+  ctaHeading: "Need automation that removes manual work?"
+},
   {
-    slug: "agentic-engineering",
-    title: "Agentic Engineering",
-    description:
-      "AI-powered systems and agentic workflows that help plan, build, debug, automate, and improve technical delivery.",
-    overviewDescription:
-      "AI-powered systems and agentic workflows that help plan, build, debug, automate, and improve technical delivery.",
-    href: "/services/agentic-engineering",
-    icon: "agentic",
-    bullets: [
-      "AI-Agent Development",
-      "Intelligent Workflows",
-      "Decision Automation",
-      "AI-Assisted Debugging",
-      "Continuous Improvement",
-      "Agentic Delivery"
-    ],
-    heroText:
-      "AI-assisted planning, debugging, automation, and delivery workflows for faster technical execution without losing engineering control.",
-    problems: [
-      "Slow technical planning",
-      "Repeated debugging cycles",
-      "Unclear implementation approach",
-      "Manual research and repetitive coding tasks",
-      "No structured AI-assisted workflow",
-      "Teams want speed without sacrificing quality"
-    ],
-    provides: [
-      "AI-assisted planning",
-      "Agentic workflow design",
-      "Technical debugging support",
-      "Prompt/workflow engineering",
-      "Automation-assisted development",
-      "Code review and delivery support",
-      "Documentation and handover workflows"
-    ],
-    tools: [
-      "AI agents",
-      "Codex-style workflows",
-      "GitHub",
-      "TypeScript",
-      "DevOps workflows",
-      "Automation pipelines",
-      "Documentation systems",
-      "Testing and review loops"
-    ],
-    useCases: [
-      "Plan a new technical product",
-      "Convert requirements into implementation tasks",
-      "Debug complex errors faster",
-      "Create development handoff prompts",
-      "Build automation-assisted delivery workflow"
-    ],
-    ctaHeading: "Want smarter technical delivery with human control?"
-  }
+  slug: "agentic-engineering",
+  title: "Agentic Engineering",
+  description:
+    "AI-assisted workflows, prompt systems, RCA agents, automation agents, and product delivery pipelines built with human control.",
+  overviewDescription:
+    "AI-assisted workflows, prompt systems, RCA agents, automation agents, and product delivery pipelines built with human control.",
+  href: "/services/agentic-engineering",
+  icon: "agentic",
+  bullets: [
+    "AI-Agent Workflows",
+    "Prompt Engineering",
+    "RCA & Debug Agents",
+    "MCP Integrations",
+    "AI-Assisted Delivery",
+    "Human-in-the-Loop Systems"
+  ],
+  heroText:
+    "I design and use AI-assisted engineering workflows that turn ideas, bugs, requirements, and delivery tasks into structured execution. From RCA agents to product builds, I use AI as a controlled engineering accelerator, not a replacement for judgment.",
+  problems: [
+    "Teams use AI tools without a clear workflow",
+    "Prompts produce inconsistent or low-quality results",
+    "Pipeline failures and technical issues take too long to analyze",
+    "Requirements are unclear before development starts",
+    "Research, debugging, documentation, and handoff tasks are repetitive",
+    "AI-generated output needs human review, structure, and quality control",
+    "Teams want faster delivery without losing engineering standards",
+    "No reusable prompt, agent, or automation system exists"
+  ],
+  provides: [
+    "Prompt engineering for reliable technical output",
+    "RCA agents for failed pipelines, bugs, and technical incidents",
+    "AI-assisted planning, debugging, coding, review, and documentation workflows",
+    "Agentic workflows using GPT, Codex, Claude, Gemini, and Google AI Studio",
+    "MCP-style integrations to connect AI workflows with tools and systems",
+    "AI-assisted product design, UI direction, content, and delivery planning",
+    "Reusable prompts, skills, handoff flows, and troubleshooting agents",
+    "Human-in-the-loop systems that keep quality, review, and control in place"
+  ],
+  tools: [
+    "GPT",
+    "Codex",
+    "Claude",
+    "Gemini",
+    "Google AI Studio",
+    "Blackbox",
+    "MCP",
+    "Prompt Engineering",
+    "AI Agents",
+    "RCA Agents",
+    "GitHub",
+    "TypeScript",
+    "DevOps Workflows",
+    "CI/CD Analysis",
+    "Documentation Systems",
+    "Testing Loops",
+    "Code Review",
+    "Product Handoffs"
+  ],
+  useCases: [
+    "Create RCA agents that analyze failed pipelines and summarize likely causes",
+    "Turn client requirements into structured implementation plans",
+    "Build AI-assisted workflows for debugging, documentation, and handoff",
+    "Ship websites and internal tools using Codex-style development workflows",
+    "Design reusable prompts for planning, coding, review, and troubleshooting",
+    "Connect AI workflows with external tools through MCP-style integrations",
+    "Create UI, content, and product direction with AI-assisted design workflows",
+    "Build human-controlled agent workflows for faster technical delivery"
+  ],
+  ctaHeading: "Want AI-assisted delivery without losing engineering control?"
+}
 ];
 
 export const servicePreviews: ServicePreview[] = serviceDetails.map(
@@ -339,6 +409,102 @@ export const capabilities = [
     title: "AI-Agent-Powered Delivery",
     description: "Intelligent agents, real outcomes.",
     icon: "agentic"
+  },
+  {
+  title: "Terraform IaC",
+  description: "Provision cloud and server infrastructure reliably.",
+  icon: "settings"
+  },
+  {
+    title: "Ansible Automation",
+    description: "Repeatable playbooks, jobs, and server workflows.",
+    icon: "pipeline"
+  },
+  {
+    title: "Azure DevOps",
+    description: "Pipelines, repos, boards, and release support.",
+    icon: "branch"
+  },
+  {
+    title: "Datadog & Grafana",
+    description: "Dashboards, monitoring, alerts, and visibility.",
+    icon: "chart"
+  },
+  {
+    title: ".NET Applications",
+    description: "Modern, MVC, and legacy .NET application support.",
+    icon: "code"
+  },
+  {
+    title: "Database Systems",
+    description: "PostgreSQL, SQL Server, MySQL-backed workflows.",
+    icon: "database"
+  },
+  {
+    title: "Azure Functions",
+    description: "Scheduled cloud tasks and event-driven automation.",
+    icon: "automation"
+  },
+  {
+    title: "RCA Agents",
+    description: "AI-assisted root-cause analysis for failures.",
+    icon: "agentic"
+  }
+] as const;
+
+export const capabilityGroups = [
+  {
+    title: "DevOps & Cloud",
+    description: "Delivery, infrastructure, versioning, and cloud release operations.",
+    icon: "cloud",
+    items: [
+      "CI/CD Pipelines",
+      "Cloud Deployment",
+      "Terraform IaC",
+      "Azure DevOps",
+      "Ansible Automation",
+      "Containerization",
+      "Git & Versioning"
+    ]
+  },
+  {
+    title: "Software & Data",
+    description: "Business apps, dashboards, databases, APIs, and web systems.",
+    icon: "code",
+    items: [
+      "Websites",
+      "Dashboards",
+      "Management Systems",
+      "Ecommerce",
+      ".NET Applications",
+      "Database Systems",
+      "REST API Automation"
+    ]
+  },
+  {
+    title: "Automation & Support",
+    description: "Scripts, support workflows, scheduled jobs, monitoring, and tools.",
+    icon: "automation",
+    items: [
+      "PowerShell",
+      "Bash",
+      "Python",
+      "One-Click EXEs",
+      "Azure Functions",
+      "Logging & Monitoring",
+      "L3 Support"
+    ]
+  },
+  {
+    title: "AI & Agentic",
+    description: "AI-assisted delivery, RCA workflows, and intelligent automation.",
+    icon: "agentic",
+    items: [
+      "AI-Agent-Powered Delivery",
+      "RCA Agents",
+      "Prompt Workflows",
+      "Human-in-the-Loop Review"
+    ]
   }
 ] as const;
 

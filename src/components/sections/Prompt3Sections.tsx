@@ -35,7 +35,7 @@ import { IconBox } from "@/components/ui/IconBox";
 import { MetricCard } from "@/components/ui/MetricCard";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { TechBadge } from "@/components/ui/TechBadge";
-import { capabilities, serviceDetails, whyChooseUs } from "@/data/services";
+import { capabilityGroups, serviceDetails, whyChooseUs } from "@/data/services";
 import {
   featuredProject,
   moreWork,
@@ -162,14 +162,21 @@ export function CapabilitiesSection() {
       <Container maxWidth={false} className={styles.container}>
         <HudPanel title="Capabilities & Technologies">
           <div className={styles.capabilityGrid}>
-            {capabilities.map((item) => {
-              const Icon = getIcon(item.icon);
+            {capabilityGroups.map((group) => {
+              const Icon = getIcon(group.icon);
               return (
-                <GlassCard key={item.title} className={styles.capability} hover={false}>
+                <GlassCard key={group.title} className={styles.capabilityGroup} hover={false}>
                   <IconBox icon={<Icon size={24} />} />
                   <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3>{group.title}</h3>
+                    <p>{group.description}</p>
+                    <div className={styles.capabilityTags}>
+                      {group.items.map((item) => (
+                        <TechBadge key={item} tone="cyan">
+                          {item}
+                        </TechBadge>
+                      ))}
+                    </div>
                   </div>
                 </GlassCard>
               );
