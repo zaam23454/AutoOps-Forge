@@ -162,9 +162,10 @@ function ClientExpectations() {
         <HudPanel title="What Clients Can Expect">
           <div className={styles.expectGrid}>
             {clientExpectations.map((item) => (
-              <GlassCard key={item} className={styles.expectCard} hover={false}>
+              <GlassCard key={item.title} className={styles.expectCard} hover={false}>
                 <IconBox icon={<CheckCircle2 size={24} />} />
-                <h3>{item}</h3>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </GlassCard>
             ))}
           </div>

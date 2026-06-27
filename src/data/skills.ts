@@ -2,65 +2,102 @@ export const portfolioExpertise = [
   {
     title: "DevOps & Cloud",
     items: [
+      "Azure",
       "AWS",
       "Google Cloud",
-      "Azure",
-      "Docker",
-      "Kubernetes",
+      "Vercel",
       "Terraform",
       "Ansible",
-      "Jenkins",
-      "GitHub Actions",
+      "Ansible Tower",
+      "Docker",
+      "Docker Compose",
+      "Kubernetes Basics",
       "Linux",
+      "Windows Server",
       "Nginx",
-      "Apache"
+      "Nginx Plus",
+      "IIS"
     ],
     icon: "cloud"
   },
   {
-    title: "Development",
+    title: "CI/CD & Release",
     items: [
-      "Python",
-      "Bash",
-      "Node.js",
+      "GitHub Actions",
+      "Jenkins",
+      "Azure DevOps",
+      "Bitbucket",
+      "CircleCI",
+      "Git / GitHub",
+      "ARM Templates",
+      "Release Troubleshooting",
+      "Rollback Planning",
+      "Environment Management",
+      "Pipeline RCA"
+    ],
+    icon: "automation"
+  },
+  {
+    title: "Software Development",
+    items: [
+      ".NET Framework",
+      ".NET MVC",
+      ".NET 8",
+      ".NET 10",
+      "C#",
+      "React",
+      "Next.js",
+      "TypeScript",
       "JavaScript",
-      "PHP",
+      "Node.js",
       "HTML/CSS",
       "REST APIs",
-      "Git / GitHub",
-      "VS Code",
       "Postman"
     ],
     icon: "code"
   },
   {
-    title: "Automation",
+    title: "Automation & APIs",
     items: [
-      "CI/CD Pipelines",
-      "GitOps",
-      "Infrastructure as Code",
-      "Workflow Automation",
-      "Agentic Automation"
+      "PowerShell",
+      "Bash",
+      "Python",
+      "Cron Jobs",
+      "Task Scheduler",
+      "Azure Functions",
+      "Google Apps Script",
+      "Windows Forms",
+      "One-Click EXEs",
+      "Playwright",
+      "Macro Workflows",
+      "Webhook Automation",
+      "Middleware APIs"
     ],
     icon: "automation"
   },
   {
-    title: "Support & Operations",
+    title: "Monitoring & Support",
     items: [
-      "Linux Administration",
-      "Monitoring",
+      "Datadog",
+      "Grafana",
       "Logging",
       "Alerting",
-      "Backup",
+      "L3 Support",
       "Incident Response",
       "Performance",
-      "System Hardening"
+      "Backup",
+      "System Hardening",
+      "API Troubleshooting",
+      "Post-Deployment Support"
     ],
     icon: "support"
   },
   {
-    title: "QA & Testing",
+    title: "Data & QA",
     items: [
+      "SQL Server",
+      "PostgreSQL",
+      "MySQL",
       "Manual Testing",
       "Test Planning",
       "Jira",
@@ -71,33 +108,51 @@ export const portfolioExpertise = [
       "Quality Assurance"
     ],
     icon: "qa"
+  },
+  {
+    title: "Agentic Engineering",
+    items: [
+      "GPT",
+      "Codex",
+      "Claude",
+      "Gemini",
+      "Google AI Studio",
+      "Blackbox",
+      "Prompt Engineering",
+      "RCA Agents",
+      "MCP Workflows",
+      "AI-Assisted Debugging",
+      "AI Product Delivery",
+      "Human-in-the-Loop Review"
+    ],
+    icon: "agentic"
   }
 ];
 
 export const summaryCapabilities = [
   {
-    title: "Development",
-    description: "Clean, scalable and maintainable code.",
+    title: "Software Engineering",
+    description: "Custom websites, .NET apps, REST APIs, dashboards, and database-backed systems.",
     icon: "code"
   },
   {
     title: "DevOps & Cloud",
-    description: "CI/CD, infrastructure as code, and cloud excellence.",
+    description: "CI/CD pipelines, Terraform, Ansible, Azure, AWS, Docker, and reliable deployments.",
     icon: "cloud"
   },
   {
     title: "Automation",
-    description: "Smarter workflows, less manual work, better outcomes.",
+    description: "PowerShell, Bash, scheduled jobs, Azure Functions, APIs, and one-click tools.",
     icon: "automation"
   },
   {
-    title: "Support & QA",
-    description: "Reliable support and quality you can trust.",
+    title: "Support & Reliability",
+    description: "L3 troubleshooting, monitoring, Datadog, Grafana, release support, and recovery.",
     icon: "support"
   },
   {
     title: "Agentic Engineering",
-    description: "Intelligent agents that act, learn, and optimize.",
+    description: "AI-assisted workflows, RCA agents, prompt systems, Codex, GPT, Claude, and Gemini.",
     icon: "agentic"
   }
 ];

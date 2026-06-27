@@ -315,9 +315,9 @@
 
 .experienceCard {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(280px, 0.9fr);
-  gap: 1rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  gap: 1.2rem;
+  align-items: start;
 }
 
 .company {
@@ -325,6 +325,42 @@
   font-family: var(--font-share-tech-mono), monospace;
   font-size: 0.78rem;
   letter-spacing: 0.06em;
+}
+
+.phaseGrid {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.phaseCard {
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(0, 229, 255, 0.16);
+  background:
+    linear-gradient(135deg, rgba(0, 229, 255, 0.055), transparent 48%),
+    rgba(5, 11, 16, 0.48);
+}
+
+.phaseCard span {
+  color: var(--color-electric-cyan);
+  font-family: var(--font-share-tech-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.phaseCard h4 {
+  margin: 0.25rem 0;
+  color: var(--color-soft-white);
+  font-family: var(--font-rajdhani), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.12;
+}
+
+.phaseCard p {
+  margin: 0;
+  color: var(--color-muted-text);
+  font-size: 0.84rem;
+  line-height: 1.48;
 }
 
 .certGrid,

@@ -66,10 +66,28 @@ export const deliveryPrinciples = [
 ];
 
 export const clientExpectations = [
-  "Clear scope and priorities",
-  "Transparent delivery approach",
-  "Modern tooling and workflows",
-  "Technical execution with business context",
-  "Reliable deployment support",
-  "Ongoing improvement mindset"
+  {
+    title: "Clear scope and priorities",
+    description: "We define goals, blockers, dependencies, and the first practical path before execution starts."
+  },
+  {
+    title: "Transparent delivery approach",
+    description: "You get clear progress, honest tradeoffs, and technical decisions explained without noise."
+  },
+  {
+    title: "Modern tooling and workflows",
+    description: "We use reliable tools, automation, CI/CD, monitoring, and AI-assisted workflows where they make sense."
+  },
+  {
+    title: "Technical execution with business context",
+    description: "Solutions are built around real operations, user needs, support realities, and long-term maintainability."
+  },
+  {
+    title: "Reliable deployment support",
+    description: "Delivery includes deployment planning, rollback awareness, troubleshooting, and post-launch stability."
+  },
+  {
+    title: "Ongoing improvement mindset",
+    description: "After launch, we look for ways to simplify, automate, document, and improve the system."
+  }
 ];

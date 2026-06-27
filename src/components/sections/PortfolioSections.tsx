@@ -93,14 +93,6 @@ function PortfolioHero() {
               ))}
             </div>
           </div>
-
-          <div className={styles.sidePanel}>
-            <GlassCard accent="cyan" className={styles.availability}>
-              <span className={styles.smallLabel}>Open to</span>
-              <strong>Remote - Global - Hybrid</strong>
-              <p className={styles.muted}>Freelance - Contract - Full-time</p>
-            </GlassCard>
-          </div>
         </div>
       </Container>
     </section>
@@ -114,12 +106,11 @@ function ProfessionalSummary() {
         <HudPanel className={styles.summaryPanel}>
           <div className={styles.summaryText}>
             <span className={styles.sectionLabel}>Professional Summary</span>
-            <h2>Technical Operator for Reliable Delivery</h2>
+            <h2>DevOps, Automation & AI-Assisted Software Engineer</h2>
             <p className={styles.copy}>
-              I&apos;m Maaz Khalid, a DevOps Engineer and Automation Specialist
-              with a passion for building reliable, scalable, and secure systems.
-              I bridge development and operations to deliver end-to-end solutions
-              across cloud, automation, QA, support, and AI-assisted engineering.
+              I&apos;m Maaz Khalid, a DevOps Engineer, Automation Specialist, and Software Engineer focused on reliable delivery, practical automation, and AI-assisted engineering.
+              I work across CI/CD pipelines, cloud infrastructure, .NET applications, REST APIs, scripting, monitoring, support, 
+              and agentic workflows to turn complex technical problems into stable, usable systems.
             </p>
           </div>
           <div className={styles.capabilityRow}>
@@ -186,14 +177,28 @@ function ExperienceTimeline() {
           {experienceEntries.map((entry) => (
             <div className={styles.experienceRow} key={`${entry.period}-${entry.company}`}>
               <div className={styles.period}>{entry.period}</div>
-              <GlassCard className={styles.experienceCard} hover={false}>
-                <div>
-                  <span className={styles.company}>{entry.company}</span>
-                  <h3>{entry.role}</h3>
-                  <p>{entry.summary}</p>
-                </div>
-                <div className={styles.tagList}>
-                  {entry.tags.map((tag) => (
+                <GlassCard className={styles.experienceCard} hover={false}>
+                  <div>
+                    <span className={styles.company}>
+                      {entry.company}
+                      {"division" in entry && entry.division ? ` · ${entry.division}` : ""}
+                    </span>
+                    <h3>{entry.role}</h3>
+                    <p>{entry.summary}</p>
+                    {"phases" in entry && entry.phases ? (
+                      <div className={styles.phaseGrid}>
+                        {entry.phases.map((phase) => (
+                          <div className={styles.phaseCard} key={phase.title}>
+                            <span>{phase.period}</span>
+                            <h4>{phase.title}</h4>
+                            <p>{phase.summary}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                  <div className={styles.tagList}>
+                    {entry.tags.map((tag) => (
                     <TechBadge key={tag}>{tag}</TechBadge>
                   ))}
                 </div>
