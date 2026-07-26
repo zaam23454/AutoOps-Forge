@@ -28,7 +28,7 @@ export function Footer() {
           <h2>Menu</h2>
           <nav className={styles.linkGrid} aria-label="Footer navigation">
             {navigationItems.map((item) => (
-              <Link key={item.href} href={item.href} prefetch={false}>
+              <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
             ))}

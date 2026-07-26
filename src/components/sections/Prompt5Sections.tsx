@@ -331,9 +331,15 @@ function AlternativeMethods() {
                 <IconBox icon={<Icon size={28} />} accent={index === 0 ? "orange" : "cyan"} />
                 <h3>{method.title}</h3>
                 <p>{method.text}</p>
-                <Link href={method.href} className={styles.link} prefetch={false}>
-                  {method.action} <ArrowRight size={16} />
-                </Link>
+                {method.href.startsWith("/") ? (
+                  <Link href={method.href} className={styles.link}>
+                    {method.action} <ArrowRight size={16} />
+                  </Link>
+                ) : (
+                  <a href={method.href} className={styles.link}>
+                    {method.action} <ArrowRight size={16} />
+                  </a>
+                )}
               </GlassCard>
             );
           })}

@@ -272,7 +272,7 @@ function PortfolioProjects() {
               </div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <Link className={styles.link} href="/projects" prefetch={false}>
+              <Link className={styles.link} href="/projects">
                 {project.cta} <ArrowRight size={16} />
               </Link>
             </GlassCard>

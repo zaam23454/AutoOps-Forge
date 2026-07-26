@@ -24,6 +24,11 @@ export function GlowButton({
   type = "button",
   ariaLabel
 }: GlowButtonProps) {
+  const isInternalPageLink =
+    href?.startsWith("/") &&
+    !href.startsWith("/docs/") &&
+    !/\.[a-z0-9]+(?:[?#]|$)/i.test(href);
+
   const content = (
     <>
       <span>{children}</span>
@@ -34,8 +39,16 @@ export function GlowButton({
   const classes = clsx(styles.button, styles[variant], className);
 
   if (href) {
+    if (!isInternalPageLink) {
+      return (
+        <a className={classes} href={href} aria-label={ariaLabel} onClick={onClick}>
+          {content}
+        </a>
+      );
+    }
+
     return (
-      <Link className={classes} href={href} aria-label={ariaLabel} onClick={onClick} prefetch={false}>
+      <Link className={classes} href={href} aria-label={ariaLabel} onClick={onClick}>
         {content}
       </Link>
     );

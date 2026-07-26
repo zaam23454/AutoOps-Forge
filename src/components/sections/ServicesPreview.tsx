@@ -29,7 +29,7 @@ export function ServicesPreview() {
                   <IconBox icon={<Icon />} accent={index === 2 ? "orange" : "cyan"} />
                   <h3 className={styles.cardTitle}>{service.title}</h3>
                   <p className={styles.cardText}>{service.description}</p>
-                  <Link className={styles.learnLink} href={service.href} prefetch={false}>
+                  <Link className={styles.learnLink} href={service.href}>
                     Learn more <ArrowRight size={16} />
                   </Link>
                 </GlassCard>

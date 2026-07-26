@@ -21,7 +21,6 @@ export function Navbar() {
       <Link
         key={item.href}
         href={item.href}
-        prefetch={false}
         className={active ? styles.activeLink : styles.navLink}
         onClick={() => setOpen(false)}
       >

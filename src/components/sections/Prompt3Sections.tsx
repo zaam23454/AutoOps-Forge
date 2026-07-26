@@ -139,7 +139,7 @@ export function ServicesPageContent() {
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                  <Link className={styles.link} href={service.href} prefetch={false}>
+                  <Link className={styles.link} href={service.href}>
                     Explore Service <ArrowRight size={16} />
                   </Link>
                 </GlassCard>
@@ -403,7 +403,7 @@ function MoreWorkGrid() {
               <TechBadge tone={index === 3 ? "orange" : "cyan"}>{item.category}</TechBadge>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <Link className={styles.link} href="/contact" prefetch={false}>
+              <Link className={styles.link} href="/contact">
                 Discuss Similar Work <ArrowRight size={16} />
               </Link>
             </GlassCard>
