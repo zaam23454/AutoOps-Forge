@@ -33,8 +33,11 @@ import { GlowButton } from "@/components/ui/GlowButton";
 import { HudPanel } from "@/components/ui/HudPanel";
 import { IconBox } from "@/components/ui/IconBox";
 import { MetricCard } from "@/components/ui/MetricCard";
+import { MobileCollapsibleList } from "@/components/ui/MobileCollapsibleList";
+import { MobileRevealList } from "@/components/ui/MobileRevealList";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { TechBadge } from "@/components/ui/TechBadge";
+import { ProjectsExplorer } from "./ProjectsExplorer";
 import { capabilityGroups, serviceDetails, whyChooseUs } from "@/data/services";
 import {
   featuredProject,
@@ -68,6 +71,13 @@ const iconMap = {
   shield: ShieldCheck,
   terminal: TerminalSquare,
   tool: Wrench
+};
+
+const projectCategoryAssignments: Record<string, readonly string[]> = {
+  "Deployment Automation Toolkit": ["DevOps", "Automation"],
+  "Cloud Migration & Environment Setup": ["DevOps", "Support Systems"],
+  "Internal Ops Dashboard": ["Web Apps", "Support Systems"],
+  "CI/CD Pipeline Optimization": ["DevOps", "Automation"]
 };
 
 function getIcon(name: string) {
@@ -134,11 +144,10 @@ export function ServicesPageContent() {
                   <IconBox icon={<Icon />} accent={accent} />
                   <h3>{service.title}</h3>
                   <p className={styles.cardText}>{service.overviewDescription}</p>
-                  <ul className={styles.bulletList}>
-                    {service.bullets.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  <MobileCollapsibleList
+                    items={service.bullets}
+                    className={styles.bulletList}
+                  />
                   <Link className={styles.link} href={service.href}>
                     Explore Service <ArrowRight size={16} />
                   </Link>
@@ -161,7 +170,11 @@ export function CapabilitiesSection() {
     <section className={styles.section}>
       <Container maxWidth={false} className={styles.container}>
         <HudPanel title="Capabilities & Technologies">
-          <div className={styles.capabilityGrid}>
+          <MobileRevealList
+            className={styles.capabilityGrid}
+            initialVisible={2}
+            showLabel="Show all capabilities"
+          >
             {capabilityGroups.map((group) => {
               const Icon = getIcon(group.icon);
               return (
@@ -181,7 +194,7 @@ export function CapabilitiesSection() {
                 </GlassCard>
               );
             })}
-          </div>
+          </MobileRevealList>
         </HudPanel>
       </Container>
     </section>
@@ -193,7 +206,11 @@ export function WhyChooseSection() {
     <section className={styles.section}>
       <Container maxWidth={false} className={styles.container}>
         <HudPanel title="Why Clients Choose AutoOps Forge">
-          <div className={styles.whyGrid}>
+          <MobileRevealList
+            className={styles.whyGrid}
+            initialVisible={3}
+            showLabel="Show all reasons"
+          >
             {whyChooseUs.map((item) => {
               const Icon = getIcon(item.icon);
               return (
@@ -206,7 +223,7 @@ export function WhyChooseSection() {
                 </GlassCard>
               );
             })}
-          </div>
+          </MobileRevealList>
         </HudPanel>
       </Container>
     </section>
@@ -265,27 +282,35 @@ export function ProjectsPageContent() {
         </div>
       </PageHero>
 
-      <section className={styles.section}>
-        <Container maxWidth={false} className={styles.container}>
-          <HudPanel>
-            <div className={styles.tabs} aria-label="Project categories">
-              {projectCategories.map((category, index) => (
-                <button
-                  className={`${styles.tab} ${index === 0 ? styles.activeTab : ""}`}
-                  key={category}
-                  type="button"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-            <FeaturedProjectCase />
-          </HudPanel>
-        </Container>
-      </section>
-
-      <ProjectWorkflow />
-      <MoreWorkGrid />
+      <ProjectsExplorer
+        categories={projectCategories}
+        featured={<FeaturedProjectCase />}
+        featuredCategories={["Web Apps", "Automation"]}
+        workflow={<ProjectWorkflow />}
+        items={moreWork.map((item, index) => ({
+          id: item.title,
+          categories: projectCategoryAssignments[item.title] ?? ["DevOps", "Automation"],
+          content: (
+            <GlassCard
+              className={styles.workCard}
+              accent={index === 3 ? "orange" : "cyan"}
+            >
+              <IconBox
+                icon={<Layers3 size={28} />}
+                accent={index === 3 ? "orange" : "cyan"}
+              />
+              <TechBadge tone={index === 3 ? "orange" : "cyan"}>
+                {item.category}
+              </TechBadge>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <Link className={styles.link} href="/contact">
+                Discuss Similar Work <ArrowRight size={16} />
+              </Link>
+            </GlassCard>
+          )
+        }))}
+      />
       <ProjectsTestimonial />
       <ProjectsCTA />
     </div>
@@ -381,34 +406,6 @@ function ProjectWorkflow() {
             })}
           </div>
         </HudPanel>
-      </Container>
-    </section>
-  );
-}
-
-function MoreWorkGrid() {
-  return (
-    <section className={styles.section}>
-      <Container maxWidth={false} className={styles.container}>
-        <div className={styles.sectionHead}>
-          <div>
-            <span className={styles.eyebrow}>More Work</span>
-            <h2>Selected Capability Examples</h2>
-          </div>
-        </div>
-        <div className={styles.moreGrid}>
-          {moreWork.map((item, index) => (
-            <GlassCard key={item.title} className={styles.workCard} accent={index === 3 ? "orange" : "cyan"}>
-              <IconBox icon={<Layers3 size={28} />} accent={index === 3 ? "orange" : "cyan"} />
-              <TechBadge tone={index === 3 ? "orange" : "cyan"}>{item.category}</TechBadge>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <Link className={styles.link} href="/contact">
-                Discuss Similar Work <ArrowRight size={16} />
-              </Link>
-            </GlassCard>
-          ))}
-        </div>
       </Container>
     </section>
   );

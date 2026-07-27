@@ -21,6 +21,10 @@
   isolation: isolate;
 }
 
+.mobileQuickContact {
+  display: none;
+}
+
 .hero::before {
   position: absolute;
   inset: 0;
@@ -100,7 +104,7 @@
 
 .sectionHead {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
   margin-bottom: 1.2rem;
@@ -354,6 +358,93 @@
   .altGrid,
   .formGrid {
     grid-template-columns: 1fr;
+  }
+
+  .mobileQuickContact {
+    display: block;
+    padding: 0.85rem 0 0.25rem;
+    background: linear-gradient(180deg, rgba(0, 229, 255, 0.045), transparent);
+    border-top: 1px solid rgba(0, 229, 255, 0.12);
+  }
+
+  .mobileQuickGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .mobileQuickGrid a {
+    display: inline-flex;
+    min-width: 0;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.35rem;
+    color: var(--color-electric-cyan);
+    font-family: var(--font-share-tech-mono), monospace;
+    font-size: 0.68rem;
+    text-align: center;
+    background: rgba(0, 229, 255, 0.035);
+    border: 1px solid rgba(0, 229, 255, 0.22);
+    border-radius: 6px;
+  }
+
+  .mobileQuickGrid a:focus-visible {
+    outline: 2px solid var(--color-electric-cyan);
+    outline-offset: 2px;
+  }
+
+  .timeline {
+    position: relative;
+    gap: 0.9rem;
+    padding-left: 1.35rem;
+  }
+
+  .timeline::before {
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 0.35rem;
+    width: 1px;
+    content: "";
+    background: linear-gradient(180deg, var(--color-electric-cyan), rgba(0, 229, 255, 0.16));
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.3);
+  }
+
+  .stepCard {
+    position: relative;
+  }
+
+  .stepCard::before {
+    position: absolute;
+    top: 1.45rem;
+    left: -1.43rem;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background: var(--color-deep-space);
+    border: 1px solid var(--color-electric-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.55);
+  }
+
+  .section {
+    padding: 1.75rem 0;
+  }
+
+  .infoCard a,
+  .link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .link {
+    width: 100%;
+    padding: 0.7rem 0;
+    margin-top: 0.25rem;
+    border-top: 1px solid rgba(0, 229, 255, 0.12);
   }
 
   .actions,

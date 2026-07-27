@@ -151,4 +151,11 @@
     gap: 0.55rem;
     width: min(100% - 24px, var(--max-page-width));
   }
+
+  .linkGrid a,
+  .contactList a,
+  .socialLink {
+    min-height: 44px;
+    align-items: center;
+  }
 }

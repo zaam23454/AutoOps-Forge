@@ -20,6 +20,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { GlowButton } from "@/components/ui/GlowButton";
 import { HudPanel } from "@/components/ui/HudPanel";
 import { IconBox } from "@/components/ui/IconBox";
+import { MobileRevealList } from "@/components/ui/MobileRevealList";
 import { TechBadge } from "@/components/ui/TechBadge";
 import styles from "./PortfolioSections.module.css";
 
@@ -61,21 +62,33 @@ function PortfolioHero() {
 
   return (
     <section className={styles.hero}>
+      <div className={styles.mobileArtwork} aria-hidden="true">
+        <Image
+          src="/portfolio/mobile-portrait-hero.png"
+          alt=""
+          fill
+          priority
+          quality={72}
+          sizes="(max-width: 760px) 100vw, 1px"
+        />
+      </div>
       <Container maxWidth={false} className={styles.container}>
         <div className={styles.heroGrid}>
           <div className={styles.intro}>
-            <span className={styles.eyebrow}>Portfolio</span>
-            <h1>
-              Maaz <span className={styles.cyan}>Khalid</span>
-            </h1>
-            <p className={styles.subtitle}>
-              DevOps Engineer, Automation Specialist, and AI-Assisted Developer.
-            </p>
-            <p className={styles.introText}>
-              I build and automate modern systems that scale. From infrastructure
-              to code, workflows to agentic solutions - turning ideas into
-              reliable, high-performance outcomes.
-            </p>
+            <div className={styles.heroCopy}>
+              <span className={styles.eyebrow}>Portfolio</span>
+              <h1>
+                Maaz <span className={styles.cyan}>Khalid</span>
+              </h1>
+              <p className={styles.subtitle}>
+                DevOps Engineer, Automation Specialist, and AI-Assisted Developer.
+              </p>
+              <p className={styles.introText}>
+                I build and automate modern systems that scale. From infrastructure
+                to code, workflows to agentic solutions - turning ideas into
+                reliable, high-performance outcomes.
+              </p>
+            </div>
             <div className={styles.actions}>
               <GlowButton href="/docs/maaz-khalid-cv.pdf" icon={<Download size={17} />}>
                 Download CV
@@ -113,7 +126,11 @@ function ProfessionalSummary() {
               and agentic workflows to turn complex technical problems into stable, usable systems.
             </p>
           </div>
-          <div className={styles.capabilityRow}>
+          <MobileRevealList
+            className={styles.capabilityRow}
+            initialVisible={3}
+            showLabel="Show all capabilities"
+          >
             {summaryCapabilities.map((item) => (
               <GlassCard key={item.title} className={styles.capability} hover={false}>
                 <IconBox icon={<IconFor name={item.icon} />} />
@@ -121,7 +138,7 @@ function ProfessionalSummary() {
                 <p>{item.description}</p>
               </GlassCard>
             ))}
-          </div>
+          </MobileRevealList>
         </HudPanel>
       </Container>
     </section>
@@ -138,7 +155,11 @@ function ExpertiseGrid() {
             <h2>Systems, Automation, Cloud, and Quality</h2>
           </div>
         </div>
-        <div className={styles.expertiseGrid}>
+        <MobileRevealList
+          className={styles.expertiseGrid}
+          initialVisible={4}
+          showLabel="Show all expertise"
+        >
           {portfolioExpertise.map((group, index) => (
             <GlassCard
               key={group.title}
@@ -150,14 +171,18 @@ function ExpertiseGrid() {
                 accent={index === 2 ? "orange" : "cyan"}
               />
               <h3>{group.title}</h3>
-              <div className={styles.tagList}>
+              <MobileRevealList
+                className={styles.tagList}
+                initialVisible={8}
+                showLabel="Show all tools"
+              >
                 {group.items.map((item) => (
                   <TechBadge key={item}>{item}</TechBadge>
                 ))}
-              </div>
+              </MobileRevealList>
             </GlassCard>
           ))}
-        </div>
+        </MobileRevealList>
       </Container>
     </section>
   );
@@ -173,7 +198,11 @@ function ExperienceTimeline() {
             <h2>Career Progression</h2>
           </div>
         </div>
-        <div className={styles.timeline}>
+        <MobileRevealList
+          className={styles.timeline}
+          initialVisible={2}
+          showLabel="Show earlier experience"
+        >
           {experienceEntries.map((entry) => (
             <div className={styles.experienceRow} key={`${entry.period}-${entry.company}`}>
               <div className={styles.period}>{entry.period}</div>
@@ -205,7 +234,7 @@ function ExperienceTimeline() {
               </GlassCard>
             </div>
           ))}
-        </div>
+        </MobileRevealList>
       </Container>
     </section>
   );
@@ -221,7 +250,11 @@ function CertificationsGrid() {
             <h2>Verified Learning Track</h2>
           </div>
         </div>
-        <div className={styles.certGrid}>
+        <MobileRevealList
+          className={styles.certGrid}
+          initialVisible={3}
+          showLabel="Show all certifications"
+        >
           {certifications.map((cert, index) => (
             <GlassCard
               key={`${cert.issuer}-${cert.title}`}
@@ -237,7 +270,7 @@ function CertificationsGrid() {
               <p>{cert.detail}</p>
             </GlassCard>
           ))}
-        </div>
+        </MobileRevealList>
       </Container>
     </section>
   );
@@ -253,7 +286,11 @@ function PortfolioProjects() {
             <h2>Practical Delivery Examples</h2>
           </div>
         </div>
-        <div className={styles.projectGrid}>
+        <MobileRevealList
+          className={styles.projectGrid}
+          initialVisible={2}
+          showLabel="Show all projects"
+        >
           {portfolioProjects.map((project, index) => (
             <GlassCard
               key={project.title}
@@ -277,7 +314,7 @@ function PortfolioProjects() {
               </Link>
             </GlassCard>
           ))}
-        </div>
+        </MobileRevealList>
       </Container>
     </section>
   );

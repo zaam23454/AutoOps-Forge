@@ -3,6 +3,7 @@ import { Container } from "@mui/material";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { GlowButton } from "@/components/ui/GlowButton";
 import { IconBox } from "@/components/ui/IconBox";
+import { MobileRevealList } from "@/components/ui/MobileRevealList";
 import { TechBadge } from "@/components/ui/TechBadge";
 import { featuredProject } from "@/data/projects";
 import { projectFeatureIconMap } from "./homeData";
@@ -33,13 +34,17 @@ export function FeaturedProject() {
             </div>
             <GlassCard className={styles.techPanel} accent="orange" hover={false}>
               <h4>Tech Stack</h4>
-              <div className={styles.badgeWrap}>
+              <MobileRevealList
+                className={styles.badgeWrap}
+                initialVisible={6}
+                showLabel="Show full tech stack"
+              >
                 {featuredProject.stack.map((item) => (
                   <TechBadge key={item} tone={item.includes("Google") ? "orange" : "cyan"}>
                     {item}
                   </TechBadge>
                 ))}
-              </div>
+              </MobileRevealList>
             </GlassCard>
           </div>
 

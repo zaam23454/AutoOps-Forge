@@ -212,11 +212,50 @@ export function ContactPageContent() {
         }
         text="Whether you need a website, custom system, automation, deployment help, or technical troubleshooting - AutoOps Forge is the right place to start."
       />
+      <MobileQuickContact />
       <ContactMain />
       <TrustCards />
       <AlternativeMethods />
       <ContactBottomCTA />
     </div>
+  );
+}
+
+function MobileQuickContact() {
+  const actions = [
+    {
+      label: "WhatsApp",
+      href: "https://wa.me/923082310366",
+      icon: MessageCircle
+    },
+    {
+      label: "Email",
+      href: "mailto:maazkhalid308@gmail.com",
+      icon: Mail
+    },
+    {
+      label: "Project Form",
+      href: "#contact-form",
+      icon: FileText
+    }
+  ];
+
+  return (
+    <section className={styles.mobileQuickContact} aria-label="Quick contact options">
+      <Container maxWidth={false} className={styles.container}>
+        <nav className={styles.mobileQuickGrid}>
+          {actions.map((action) => {
+            const Icon = action.icon;
+            return (
+              <a href={action.href} key={action.label}>
+                <Icon size={18} />
+                <span>{action.label}</span>
+              </a>
+            );
+          })}
+        </nav>
+      </Container>
+    </section>
   );
 }
 

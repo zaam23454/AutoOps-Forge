@@ -101,7 +101,7 @@
 
 .sectionHead {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
   margin-bottom: 1.25rem;
@@ -384,6 +384,20 @@
   gap: 1rem;
 }
 
+.filteredItem {
+  min-width: 0;
+}
+
+.filteredItem > * {
+  height: 100%;
+}
+
+.filterSummary {
+  margin: 1rem;
+  color: var(--color-metal-silver);
+  line-height: 1.65;
+}
+
 .testimonialGrid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -459,11 +473,31 @@
   .servicesGrid,
   .capabilityGrid,
   .whyGrid,
-  .statsRow,
   .workflowGrid,
   .moreGrid,
   .detailGrid,
   .detailColumns {
     grid-template-columns: 1fr;
+  }
+
+  .statsRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .section {
+    padding: 1.75rem 0;
+  }
+
+  .tab {
+    min-height: 44px;
+  }
+
+  .link {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.7rem 0;
+    margin-top: 0.25rem;
+    border-top: 1px solid rgba(0, 229, 255, 0.12);
   }
 }

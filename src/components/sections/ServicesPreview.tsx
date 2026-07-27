@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@mui/material";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { IconBox } from "@/components/ui/IconBox";
+import { MobileRevealList } from "@/components/ui/MobileRevealList";
 import { servicePreviews } from "@/data/services";
 import { serviceIconMap } from "./homeData";
 import styles from "./HomeSections.module.css";
@@ -17,7 +18,11 @@ export function ServicesPreview() {
             <h2 className={styles.sectionTitle}>Services</h2>
           </header>
 
-          <div className={styles.servicesGrid}>
+          <MobileRevealList
+            className={styles.servicesGrid}
+            initialVisible={3}
+            showLabel="Show all services"
+          >
             {servicePreviews.map((service, index) => {
               const Icon = serviceIconMap[service.icon];
               return (
@@ -35,7 +40,7 @@ export function ServicesPreview() {
                 </GlassCard>
               );
             })}
-          </div>
+          </MobileRevealList>
         </div>
       </Container>
     </section>
